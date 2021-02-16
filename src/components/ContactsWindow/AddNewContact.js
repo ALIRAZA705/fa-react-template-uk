@@ -29,6 +29,7 @@ import ScheduleIcon from '@material-ui/icons/Schedule';
 import InsertInvitationIcon from '@material-ui/icons/InsertInvitation';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import { useSelector, useDispatch } from 'react-redux'
+import {getNewContactWindow,getReadContact,getContactWindow} from '../../store/actions/auth'
 
 import {
     MuiPickersUtilsProvider,
@@ -183,7 +184,7 @@ export default function AddNewContact() {
     const [value, setValue] = React.useState(0);
     // const [state, dispatch] = useContext(Context)
     const dispatch = useDispatch()
-    const openNewContact = useSelector(state => state.openNewContact)
+    const openNewContact = useSelector(state => state.FaData.openNewContact)
     const [Values, setValues] = React.useState(initialAccountValues);
     // const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
     const [selectedDate, setDate] = React.useState(moment());
@@ -206,9 +207,6 @@ export default function AddNewContact() {
     const [button2, setButton2] = React.useState("primary");
     const [flag, setFlag] = React.useState(0);
 
-    function addContactscreen() {
-        setopen(true)
-    }
 
 
     const handleDateChange = (date) => {
@@ -218,37 +216,7 @@ export default function AddNewContact() {
     const handleDateChangeend = (date) => {
         setDateend(date);
     };
-    function clickHandler(e, value) {
-        console.log("value prop", value)
-
-        if (value == "role") {
-            setButton("secondary")
-            setButton1("primary")
-            setButton2("primary")
-            setFlag(1);
-
-        }
-        else if (value == "engagements") {
-            setButton("primary")
-            setButton1("secondary")
-            setButton2("primary")
-            setFlag(2);
-
-        }
-        else if (value == "qualifications") {
-            setButton("primary")
-            setButton1("primary")
-            setButton2("secondary")
-            setFlag(3);
-
-        }
-
-
-
-        console.log("clicked button", button)
-
-
-    }
+   
     const handleInputChange = (e) => {
         console.log("values of accounts:", e.target.getAttribute('value'))
         setValues({
@@ -286,7 +254,12 @@ export default function AddNewContact() {
                     >
                         <Grid item  >
 
-                            <HighlightOffIcon style={{ marginLeft: "20px", color: "white" }} onClick={() => dispatch({ type: 'isNewConatctWindow', value: !openNewContact })} />
+                            <HighlightOffIcon style={{ marginLeft: "20px", color: "white" }} onClick={() =>
+                                //  dispatch({ type: 'isNewConatctWindow', value: !openNewContact })
+                                 
+                                 dispatch(getNewContactWindow(!openNewContact))
+
+                                 } />
 
                         </Grid>
                     </Grid>

@@ -375,13 +375,13 @@ export default (state = INIT_STATE, action) => {
         case GET_NEW_CONTACT_WINDOW:
             return {
                 ...state,
-                readContactonly : action.payload
+                openNewContact : action.payload
             };
             // break
         case GET_READ_CONTACT:
             return {
                 ...state,
-                openHeaderDrawer : action.payload
+                readContactonly : action.payload
             };
             // break
         case GET_HEADER_DRAWER:

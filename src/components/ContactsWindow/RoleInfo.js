@@ -78,7 +78,7 @@ export default function RoleInfo() {
     const [readOnly,setreadOnly]= React.useState(true);
     // const [state, dispatch] = useContext(Context)
     const dispatch = useDispatch()
-    const readContactonly = useSelector(state => state.readContactonly)
+    const readContactonly = useSelector(state => state.FaData.readContactonly)
     const handleInputChange = (e) => {
         console.log("values of accounts:", e.target.getAttribute('value'))
         setValues({

@@ -25,6 +25,7 @@ import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/
 import GridList from '@material-ui/core/GridList';
 import { useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
+import {getNewContactWindow,getReadContact,getContactWindow} from '../../store/actions/auth'
 
 const name = [
     'LEICESTER CLUB 1',
@@ -90,11 +91,12 @@ export default function ContactsFilters(props) {
     const [open, setopen] = React.useState(true)
     // const [state, dispatch] = useContext(Context)
     const dispatch = useDispatch()
-    const _open = useSelector(state => state.open)
+    const _open = useSelector(state => state.FaData.open)
     const handleOpen = () => {
         // setopen(true)
         console.log("form contact window open", open)
-        dispatch({ type: 'isConatctWindow', value: open })
+        // dispatch({ type: 'isConatctWindow', value: open })
+        dispatch(getContactWindow(open))
     };
 
     // console.log("location", window.location)
@@ -142,7 +144,10 @@ export default function ContactsFilters(props) {
                         </DialogActions>
                     </Dialog>
                   <br/>
-                    <ExportCsv csvData={props.row} fileName="csvfie" /></Grid>
+                    {/* <ExportCsv csvData={props.row} fileName="csvfie" /></Grid> */}
+                    <ExportCsv />
+                    
+                    </Grid> 
             </Grid>
 
 

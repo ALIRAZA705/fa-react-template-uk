@@ -98,7 +98,7 @@ function Rowdata(props) {
 
 export default function Qualification() {
     const dispatch = useDispatch()
-    const clubs = useSelector(state => state.clubs)
+    const clubs = useSelector(state => state.FaData.clubs)
     // const [state, dispatch] = useContext(Context)
 
     const header = ["CONTACT NAME", "ROLE", "CLUB", "LEAGUE"]

@@ -28,7 +28,7 @@ import AddNewContact from './AddNewContact'
 import Typography from '@material-ui/core/Typography';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import { useSelector, useDispatch } from 'react-redux'
-
+import {getNewContactWindow,getReadContact,getContactWindow} from '../../store/actions/auth'
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: theme.palette.background.paper,
@@ -140,9 +140,9 @@ export default function AddContact() {
     const [value, setValue] = React.useState(0);
     // const [state, dispatch] = useContext(Context)
     const dispatch = useDispatch()
-    const readContactonly = useSelector(state => state.readContactonly)
-    const _open = useSelector(state => state.open)
-    const openNewContact = useSelector(state => state.openNewContact)
+    const readContactonly = useSelector(state => state.FaData.readContactonly)
+    const _open = useSelector(state => state.FaData.open)
+    const openNewContact = useSelector(state => state.FaData.openNewContact)
 
 
     const transitionDuration = {
@@ -162,13 +162,14 @@ export default function AddContact() {
     const [button2, setButton2] = React.useState("primary");
     const [flag, setFlag] = React.useState(0);
     const addContactscreen = () =>  {
-        dispatch({ type: 'isNewConatctWindow', value: true })
+        // dispatch({ type: 'isNewConatctWindow', value: true })
+        dispatch(getNewContactWindow(true))
     }
 
     const handleChange = (event) => {
-        dispatch({ type: 'isreadContactOnly', value: !readContactonly })
+        // dispatch({ type: 'isreadContactOnly', value: !readContactonly })
 
-
+dispatch(getReadContact(!readContactonly))
     };
     const AntSwitch = withStyles((theme) => ({
         root: {
@@ -254,8 +255,10 @@ export default function AddContact() {
                     >
                         <Grid item  >
                             <HighlightOffIcon style={{ marginLeft: "20px", color: "white" }} onClick={() => {
-                                dispatch({ type: 'isConatctWindow', value: !_open })
-                                dispatch({ type: 'isreadContactOnly', value: false })
+                                // dispatch({ type: 'isConatctWindow', value: getContactWindow})
+                                dispatch(getContactWindow(!_open))
+                                // dispatch({ type: 'isreadContactOnly', value: false })getReadContact
+                                dispatch(getReadContact(false))
 
                             }} />
                         </Grid>
