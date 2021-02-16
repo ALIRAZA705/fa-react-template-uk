@@ -2,31 +2,19 @@ import React, { useEffect } from "react"
 import { FormControl, FormLabel } from '@material-ui/core';
 import { Grid, TextField } from '@material-ui/core';
 import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/styles';
-import ClearTwoToneIcon from '@material-ui/icons/ClearTwoTone';
-import clsx from 'clsx';
+
 import { makeStyles, fade, useTheme } from '@material-ui/core/styles';
-import Zoom from '@material-ui/core/Zoom';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
-import EditIcon from '@material-ui/icons/Edit';
-import UpIcon from '@material-ui/icons/KeyboardArrowUp';
+
 import { green } from '@material-ui/core/colors';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import Button from '@material-ui/core/Button';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Modal from '@material-ui/core/Modal';
+
 import Avatar from '@material-ui/core/Avatar';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import { SignalWifi1BarLock } from "@material-ui/icons";
+
 import MomentUtils from "@date-io/moment";
 import moment from "moment";
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import InsertInvitationIcon from '@material-ui/icons/InsertInvitation';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import { useSelector, useDispatch } from 'react-redux'
-import { TextareaAutosize } from '@material-ui/core';
 import  {getNewEngagementWindow}  from '../../store/actions/auth';
 
 import {
@@ -183,11 +171,9 @@ export default function AddNewEngagement() {
     const classes = useStyles();
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
-    // const [state, dispatch] = useContext(Context)
     const dispatch = useDispatch()
     const openNewEngagement = useSelector(state => state.FaData.openNewEngagement)
     const [Values, setValues] = React.useState(initialAccountValues);
-    // const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
     const [selectedDate, setDate] = React.useState(moment());
     const [selectedDateend, setDateend] = React.useState(moment());
 
@@ -208,10 +194,7 @@ export default function AddNewEngagement() {
     const [button2, setButton2] = React.useState("primary");
     const [flag, setFlag] = React.useState(0);
 
-    function addContactscreen() {
-        setopen(true)
-    }
-
+ 
 
     const handleDateChange = (date) => {
         setDate(date);
@@ -220,37 +203,7 @@ export default function AddNewEngagement() {
     const handleDateChangeend = (date) => {
         setDateend(date);
     };
-    function clickHandler(e, value) {
-        console.log("value prop", value)
-
-        if (value == "role") {
-            setButton("secondary")
-            setButton1("primary")
-            setButton2("primary")
-            setFlag(1);
-
-        }
-        else if (value == "engagements") {
-            setButton("primary")
-            setButton1("secondary")
-            setButton2("primary")
-            setFlag(2);
-
-        }
-        else if (value == "qualifications") {
-            setButton("primary")
-            setButton1("primary")
-            setButton2("secondary")
-            setFlag(3);
-
-        }
-
-
-
-        console.log("clicked button", button)
-
-
-    }
+   
     const handleInputChange = (e) => {
         console.log("values of accounts:", e.target.getAttribute('value'))
         setValues({
@@ -290,7 +243,6 @@ export default function AddNewEngagement() {
 
                             <HighlightOffIcon style={{ marginLeft: "20px", color: "white" }} onClick={() => 
                             dispatch(getNewEngagementWindow(!openNewEngagement ))
-                            // dispatch({ type: 'isNewEngagementWindow', value: !openNewEngagement })
                             
                             } />
 
@@ -301,17 +253,14 @@ export default function AddNewEngagement() {
                     <Grid
                         container
                         direction="row"
-                        // style={{ flexGrow: 1 }}
-                        // spacing={2}
+                       
                         justify="center"
                         alignItems="center"
                     >
                            <Grid item  >
                                     <FormLabel style={{ color: "white",marginRight:"15px"}}>Engagement</FormLabel>
                                 </Grid>
-                                {/* <Grid item  >
-                                    <FormLabel style={{ color: "white",marginRight:"15px"}}>{classes.dot}</FormLabel>
-                                </Grid> */}
+                           
                                <h1 style={{ color: "white",marginRight:"15px"}}>&middot;</h1>
                                 <Grid item  >
                                 <Avatar alt="Remy Sharp" src="lc.png" className={classes.large} />
@@ -338,14 +287,12 @@ export default function AddNewEngagement() {
                 <Grid container spacing={1}>
                     <Grid container item md={12} spacing={3} >
                         <Grid item md={4}>
-                            {/* <TextField variant="outlined" size="small" label="New Contact" name="newContact" value={Values.newContact} onChange={handleInputChange} /> */}
                             <TextField variant="outlined" size="small" label="Status " name="status" value={Values.status} onChange={handleInputChange}
                             />
                             <MuiPickersUtilsProvider libInstance={moment} utils={MomentUtils}>
                                 <KeyboardDatePicker
                                     autoOk={true}
                                     showTodayButton={true}
-                                    // label="Date"
                                     value={selectedDate}
                                     format="DD/MM/YYYY"
                                     inputValue={inputValue}
@@ -358,7 +305,6 @@ export default function AddNewEngagement() {
                                     <KeyboardTimePicker
                                         margin="normal"
                                         id="time-picker"
-                                        // label="Time picker"
                                         style={{ width: "37.5%" }}
                                         value={selectedDate}
                                         onChange={handleDateChange}
@@ -371,7 +317,6 @@ export default function AddNewEngagement() {
                                     <KeyboardTimePicker
                                         margin="normal"
                                         id="time-picker"
-                                        // label="Time picker"
                                         style={{ width: "38%" }}
                                         value={selectedDateend}
                                         onChange={handleDateChangeend}
@@ -395,11 +340,8 @@ export default function AddNewEngagement() {
                             <TextField variant="outlined" size="small" label="Additional Attendees" name="additionalAttendees" value={Values.additionalAttendees} onChange={handleInputChange} />                   
                         </Grid>
                         <Grid item md={4}>
-                            {/* <TextField variant="outlined" size="small" label="Project" name="project" value={Values.project} onChange={handleInputChange} /> */}
                             <TextField variant="outlined" multiline  rowsMax={10} size="small" label="Brief Summary of Visit" name="visitSummary" value={Values.visitSummary} onChange={handleInputChange} style={{height:"50%"}}/>
-                            {/* <TextareaAutosize aria-label="minimum height" rowsMin={9} rowsMax={9} size="small" placeholder="Brief Summary of Visit" name="visitSummary" value={Values.visitSummary} onChange={handleInputChange} style={{width:"88%",backgroundColor:"#172e4a",color:"white"}}/> */}
 
-                            {/* <TextField variant="outlined" size="small" label="Additional Attendees" name="additionalAttendees" value={Values.additionalAttendees} onChange={handleInputChange} />                    */}
                                  </Grid>
 
 

@@ -6,7 +6,6 @@ import { AzureAD, AuthenticationState } from 'react-aad-msal';
 import { ThemeProvider, CssBaseline } from '@material-ui/core';
 import { Box, Button, Container, AppBar, Tab, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
 import { FATabs } from './components/Tabs/FATabs';
 import Partners from './components/Partners/Partners';
 import HomeTab from './components/Tabs/HomeLayout';
@@ -15,15 +14,11 @@ import Test from './components/Tabs/Test';
 import Contact from './components/ContactsMain';
 import Clubs from './components/ClubsMain';
 import EngagementsMain from './components/EngagementsMain'
-
-
 import FootballInsights from './routes/football-insights';
 import Reports from './routes/reports';
 import { ReportSingle } from './routes/reportSingle';
-
 import MensTheme from './themes/mens';
 import WomensTheme from './themes/womens';
-
 import { getAuthInfo } from './store/actions/auth';
 import { authProvider } from './authProvider';
 import './FilterExpand.css'
@@ -33,8 +28,13 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/styles';
 import ContactsFilters from './components/ContactsMain/ContactsFilter'
-const drawerWidth = 400;
+import EngagemenstMainHeader from './components/EngagementsMain/EngagementsControls'
+import ClubsFilters from './components/ClubsMain/ClubFilters'
+import StaffFilters from './components/StaffMain/StaffFilters'
+import StaffMain from './components/StaffMain'
+import Dashboard from './components/Dashboard'
 
+const drawerWidth = 400;
 const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: 38,
@@ -210,31 +210,40 @@ function App(props) {
       dispatch(getAuthInfo());
     }
   }, [authState, dispatch]);
- 
+
   return (
     <>
       <div className={classes.backgroundShirt}></div>
       <div className={classes.backgroundLines}></div>
       <Header />
       <MuiThemeProvider theme={getMuiTheme()}>
-      <Accordion
-            TransitionProps={{ unmountOnExit: true }}
-            expanded={expanded}
-          >
-            <AccordionSummary
-              aria-controls="panel1a-content"
-              id="panel1a-header"
+        <Accordion
+          TransitionProps={{ unmountOnExit: true }}
+          expanded={expanded}
+        >
+          <AccordionSummary
+            aria-controls="panel1a-content"
+            id="panel1a-header"
 
-            >
-            </AccordionSummary>
-            <AccordionDetails>
-              {window.location == "http://localhost:3000/helix/contacts" ? <ContactsFilters /> :<></>}
-            </AccordionDetails>
-          </Accordion>
-          <hr className="new1" />
-          <button className="buttonx" onClick={handleChange}>
-            <hr className="new2"></hr></button>
-            </MuiThemeProvider>
+          >
+          </AccordionSummary>
+          <AccordionDetails>
+            <Switch>
+          
+
+              <Route exact path="/contacts" component={ContactsFilters} />
+              <Route exact path="/clubs" component={ClubsFilters} />
+              {/* <Route exact path="/staff" component={StaffFilters} /> */}
+              <Route exact path="/engagements" component={EngagemenstMainHeader} />
+              <Route exact path="/staff" component={StaffFilters} />
+
+            </Switch>
+          </AccordionDetails>
+        </Accordion>
+        <hr className="new1" />
+        <button className="buttonx" onClick={handleChange}>
+          <hr className="new2"></hr></button>
+      </MuiThemeProvider>
       {/* <AzureAD provider={authProvider} reduxStore={store}>
         {({ accountInfo, authenticationState, error, login, logout }) => {
           if (authenticationState === AuthenticationState.Unauthenticated || authenticationState === AuthenticationState.InProgress) {
@@ -268,22 +277,23 @@ function App(props) {
           }
         }}
       </AzureAD> */}
-             {/* <Header  /> */}
-                <Container maxWidth={false} className={`${classes.addedHeight} ${classes.container}`}>
-                  {/* <TabNavigation /> */}
-                  <Switch>
-                    <Route path="/football-insights" component={FootballInsights} />
-                    <Route path="/reports" component={Reports} />
-                    <Route path="/admin" component={AdminTab} />
-                    <Route exact path="/report/:reportId" component={ReportSingle} />
-                    <Route path="/contacts" component={Contact} />
-                    <Route path="/clubs" component={Clubs} />
-                    <Route exact path="/engagements" component={EngagementsMain} />
+      {/* <Header  /> */}
+      <Container maxWidth={false} className={`${classes.addedHeight} ${classes.container}`}>
+        {/* <TabNavigation /> */}
+        <Switch>
+          <Route path="/football-insights" component={FootballInsights} />
+          <Route path="/reports" component={Reports} />
+          <Route path="/admin" component={AdminTab} />
+          <Route exact path="/report/:reportId" component={ReportSingle} />
+          <Route path="/contacts" component={Contact} />
+          <Route path="/clubs" component={Clubs} />
+          <Route exact path="/engagements" component={EngagementsMain} />
+          <Route exact path="/staff" component={StaffMain} />
+          <Route exact path="/dashboard" component={Dashboard} />
 
-
-                    <Route path="/" component={HomeTab} />
-                  </Switch>
-                </Container>
+          <Route path="/" component={HomeTab} />
+        </Switch>
+      </Container>
     </>
   );
 }

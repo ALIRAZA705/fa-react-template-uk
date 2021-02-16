@@ -88,11 +88,11 @@ const getMuiTheme = () =>
 
   });
 const navLinks = [
-  { title: `DASHBOARD`, path: `/dashboard` },
+  { title: `DASHBOARD`, path: `/helix/dashboard` },
   { title: `CONTACTS`, path: `/helix/contacts` },
-  { title: `CLUBS`, path: `/clubs` },
-  { title: `ENGAGEMENT`, path: `/engagements` },
-  { title: `STAFF`, path: `/staff` },
+  { title: `CLUBS`, path: `/helix/clubs` },
+  { title: `ENGAGEMENT`, path: `/helix/engagements` },
+  { title: `STAFF`, path: `/helix/staff` },
 ]
 export default function Header() {
   const classes = useStyles();

@@ -25,6 +25,7 @@ import Switch from '@material-ui/core/Switch';
 import { OpenInBrowserOutlined } from '@material-ui/icons';
 import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
+// import { Context } from './Context/Context'
 import { useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import MomentUtils from "@date-io/moment";
@@ -35,24 +36,12 @@ import InsertInvitationIcon from '@material-ui/icons/InsertInvitation';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
-import {getContactWindow,getEngagementsFilters} from '../../store/actions/auth'
+
 import {
     MuiPickersUtilsProvider,
     KeyboardTimePicker,
     KeyboardDatePicker,
 } from '@material-ui/pickers';
-const contact = [
-    'JUSTIN BOWLY 1',
-    'JUSTIN BOWLY 2',
-    'JUSTIN BOWLY 3 ',
-    'JUSTIN BOWLY 4',
-    'JUSTIN BOWLY 5',
-    'JUSTIN BOWLY 6',
-    'JUSTIN BOWLY 7',
-    'JUSTIN BOWLY 8',
-    'JUSTIN BOWLY 9',
-    'JUSTIN BOWLY 10',
-]
 const staff = [
     'DAVID HAMPSHIRE 1',
     'DAVID HAMPSHIRE 2',
@@ -63,16 +52,6 @@ const staff = [
     'DAVID HAMPSHIRE 7',
     'DAVID HAMPSHIRE 8',
  
-]
-const engagements = [
-    'engagements 1',
-    'engagements 2',
-    'engagements 3 ',
-    'engagements 4',
-    'engagements 5',
-    'engagements6',
-    'engagements  7',
-
 ]
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -131,22 +110,20 @@ const getMuiTheme = () =>
 
 
 
-export default function EngagementsControls(props) {
-    // const [names, setnames] = React.useState(contact)
+export default function StaffFilters(props) {
+    // const [names, setnames] = React.useState(name)
     const [open, setopen] = React.useState(true)
     const classes = useStyles();
 
     // const [state, dispatch] = useContext(Context)
     const dispatch = useDispatch()
-    const _open = useSelector(state => state.FaData.open)
+    const _open = useSelector(state => state.open)
 
     
     const handleOpen = () => {
         // setopen(true)
         console.log("form contact window open", open)
-        dispatch(getContactWindow(open))
-        // dispatch({ type: 'isConatctWindow', value: open })
-
+        dispatch({ type: 'isConatctWindow', value: open })
     };
     const [selectedDate, setDate] = React.useState(moment());
     const [selectedEndDate, setEndDate] = React.useState(moment());
@@ -165,51 +142,14 @@ export default function EngagementsControls(props) {
         setEndDate(date);
         setInputEndValue(value);
     };
- const clickHandler=(value) =>{
-        console.log("value prop", value)
-    
-        if (value == "planned") {
-            console.log("planned")
-            setButton("secondary")
-            setButton1("primary")
-            setButton2("primary")
-            setFlag(1);
-            // dispatch({ type: 'EngagementsFilterTable', value: 1})
-            dispatch(getEngagementsFilters(1))
-        }
-        else if (value == "completed") {
-            setButton("primary")
-            setButton1("secondary")
-            setButton2("primary")
-            // dispatch({ type: 'EngagementsFilterTable', value: 2})
-            dispatch(getEngagementsFilters(2))
-
-
-        }
-        else if (value == "cancelled") {
-            setButton("primary")
-            setButton1("primary")
-            setButton2("secondary")
-            // dispatch({ type: 'EngagementsFilterTable', value: 3})
-            dispatch(getEngagementsFilters(3))
-
-
-        }
-
-
-
-        console.log("clicked button", button)
-
-
-    }
+ 
     const dateFormatter = str => {
         return str;
     };
   
     useEffect(() => {
         console.log("useeffect trigerd")
-        // dispatch({ type: 'EngagementsFilterTable', value: 1})
-        dispatch(getEngagementsFilters(1))
+        dispatch({ type: 'EngagementsFilterTable', value: 1})
         setFlag(1)
         
         setButton("secondary")
@@ -223,7 +163,7 @@ export default function EngagementsControls(props) {
     }, []);
     return (
 //    <Container>
-<div >
+
    <MuiThemeProvider theme={getMuiTheme()}>
 
 
@@ -232,55 +172,16 @@ export default function EngagementsControls(props) {
                 direction="row"
                 // justify="space-evenly"
                 // alignItems="center"
-                spacing={1}
+                spacing={4}
             >
-                <Grid item xs={6} md={2} >  <Search label="Search for Engagements"/> </Grid>
-                <Grid item xs={6} md={1}  > <Dropdown1 label="Staff" data={contact} /> </Grid>
-                <Grid item  xs={6} md={2} > <Dropdown1 label="Contact" data={staff} /> </Grid>
-                <Grid item  xs={6} md={1} > <Dropdown1 label="Engagement" data={engagements} /> </Grid>
-                <Grid item  xs={6} md={2} >
-                    <MuiPickersUtilsProvider libInstance={moment} utils={MomentUtils}>
-                        <KeyboardDatePicker
-                            autoOk={true}
-                            showTodayButton={true}
-                            // label="Date"
-                            value={selectedDate}
-                            format="DD/MM/YYYY"
-                            inputValue={inputValue}
-                            onChange={onDateChange}
-                            rifmFormatter={dateFormatter}
-                            keyboardIcon={<InsertInvitationIcon style={{ color: "white" }} />}
-
-                        />
-                    </MuiPickersUtilsProvider>
-                </Grid>
-                <Grid item  xs={6} md={2} >
-                    <MuiPickersUtilsProvider libInstance={moment} utils={MomentUtils}>
-                        <KeyboardDatePicker
-                            autoOk={true}
-                            showTodayButton={true}
-                            // label="Date"
-                            value={selectedEndDate}
-                            format="DD/MM/YYYY"
-                            inputValue={inputEndValue}
-                            onChange={onDateEndChange}
-                            rifmFormatter={dateFormatter}
-                            keyboardIcon={<InsertInvitationIcon style={{ color: "white" }} />}
-
-                        />
-                    </MuiPickersUtilsProvider>
-                </Grid>
-                <Grid item xs={6} md={2} >
-      <ButtonGroup size="small" aria-label="small outlined primary button group" style={{marginTop:"24px"}}>
-        <Button  color={button} onClick={(e) => clickHandler('planned')}>Planned</Button>
-        <Button  color={button1} onClick={(e) => clickHandler('completed')}>Completed</Button>
-        <Button  color={button2}  onClick={(e) => clickHandler('cancelled')}>Cancelled</Button>
-      </ButtonGroup>
-                </Grid>
+                <div style={{margin:18}}>
+                <Grid item xs={6} md={2} >  <Search label="Search for Staff" /> </Grid></div>
+                <Grid item xs={6} md={2}  > <Dropdown1 label="Staff" data={staff} /> </Grid>
+ 
             </Grid>
 
         </MuiThemeProvider>
-        </div>
+   
         // </Container>
     )
 }

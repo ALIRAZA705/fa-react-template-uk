@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import getMuiTheme from './../../styles/Overridestyles'
+// import getMuiTheme from './../../styles/Overridestyles'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
@@ -43,7 +43,7 @@ function ClubInfo(props) {
     const classes = useStyles();
 
     return (
-        <MuiThemeProvider theme={getMuiTheme()}>
+        // <MuiThemeProvider theme={getMuiTheme()}>
             <Box margin={1} >
                 <Typography variant="h6" gutterBottom component="div" marginRight={0}>
                     Club Info
@@ -122,7 +122,7 @@ function ClubInfo(props) {
                     </Table> */}
                 {/* </Table> */}
             </Box>
-        </MuiThemeProvider>
+        // </MuiThemeProvider>
 
     )
 }

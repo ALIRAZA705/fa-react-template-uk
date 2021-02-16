@@ -371,19 +371,19 @@ export default (state = INIT_STATE, action) => {
                 ...state,
                 open : action.payload
             };
-            break
+            // break
         case GET_NEW_CONTACT_WINDOW:
             return {
                 ...state,
                 readContactonly : action.payload
             };
-            break
+            // break
         case GET_READ_CONTACT:
             return {
                 ...state,
                 openHeaderDrawer : action.payload
             };
-            break
+            // break
         case GET_HEADER_DRAWER:
             console.log("value acttionn: ",action.payload);
             return {
@@ -391,19 +391,19 @@ export default (state = INIT_STATE, action) => {
                    ...state,
                 openHeaderDrawer :  action.payload
             };
-break
+// break
         case GET_ENGAGEMENTS_FILTERS:
             return {
                 ...state,
                 EngagementsFilterFlag : action.payload
             };
-            break
+            // break
         case GET_NEW_ENGAGEMENTS_WINDOW:
             return {
                 ...state,
                 openNewEngagement : action.payload
             };
-            break
+            // break
         // case "isConatctWindow":
         //     newState.open = action.value
         //     console.log("form contact window open", newState.open)
