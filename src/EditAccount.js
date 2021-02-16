@@ -89,7 +89,7 @@ export default function EmployeeForm() {
                     justify="space-between"
                     alignItems="baseline"
                 >
-                    <FormLabel style={{ color: "white" }}>Personal Deatils</FormLabel>
+                    <FormLabel style={{ color: "white" }}>Personal Details</FormLabel>
                     <HighlightOffIcon style={{ marginLeft: "20px", color: "white" }} onClick={() => {
                     dispatch(getHeaderDrawer(false))
                         dispatch(getEngagementsFilters(1))

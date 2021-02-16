@@ -17,6 +17,7 @@ import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Modal from '@material-ui/core/Modal';
 import Engagements from './Engagements'
+import lc_clubimage from '../../assets/lc.png';
 import Qualification from "./Qualification";
 import RoleInfo from "./RoleInfo";
 import { useContext } from 'react';
@@ -270,7 +271,7 @@ dispatch(getReadContact(!readContactonly))
                         alignItems="center"
                     >
                         <Grid item>
-                            <Avatar alt="Remy Sharp" src="lc.png" className={classes.large} />
+                            <Avatar alt="Remy Sharp" src={lc_clubimage} className={classes.large} />
                         </Grid>
                         <Grid
                             container

@@ -88,7 +88,7 @@ export default function RoleInfo() {
     }
 
     return (<div>
-        <MuiThemeProvider theme={getMuiTheme()}>
+        {/* <MuiThemeProvider theme={getMuiTheme()}> */}
 
             <Grid container spacing={1}>
                 <Grid container item md={12} spacing={3} >
@@ -116,7 +116,7 @@ export default function RoleInfo() {
 
             </Grid>
 
-        </MuiThemeProvider>
+        {/* </MuiThemeProvider> */}
     </div>
 
 

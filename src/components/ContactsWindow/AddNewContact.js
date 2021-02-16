@@ -242,7 +242,7 @@ export default function AddNewContact() {
     }, []);
     return (
         <div>
-            <MuiThemeProvider theme={getMuiTheme()}>
+            {/* <MuiThemeProvider theme={getMuiTheme()}> */}
                 <div style={{ margin: "10px" }}>
 
 
@@ -357,7 +357,7 @@ export default function AddNewContact() {
 
                 </Grid>
 
-            </MuiThemeProvider>
+            {/* </MuiThemeProvider> */}
         </div>
     )
 }

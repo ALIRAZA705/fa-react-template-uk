@@ -82,7 +82,7 @@ function EngagementHistory(props) {
                 <Table size="small" aria-label="purchases"   >
                     <TableHead   >
                         <TableRow  >
-                            <TableCell >Datet</TableCell>
+                            <TableCell >Date</TableCell>
                             <TableCell>Club</TableCell>
                             <TableCell align="left">Staff</TableCell>
                         </TableRow>
