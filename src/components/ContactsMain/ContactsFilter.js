@@ -27,16 +27,11 @@ import { useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 
 const name = [
-    'JUSTIN BOWLY 1',
-    'JUSTIN BOWLY 2',
-    'JUSTIN BOWLY 3 ',
-    'JUSTIN BOWLY 4',
-    'JUSTIN BOWLY 5',
-    'JUSTIN BOWLY 6',
-    'JUSTIN BOWLY 7',
-    'JUSTIN BOWLY 8',
-    'JUSTIN BOWLY 9',
-    'JUSTIN BOWLY 10',
+    'LEICESTER CLUB 1',
+    'LEICESTER CLUB 2',
+    'LEICESTER CLUB 3',
+    'LEICESTER CLUB 4',
+    'LEICESTER CLUB 5',
 ]
 const league = [
     'PREMIER LEAGUE 1',

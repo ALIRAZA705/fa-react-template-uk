@@ -231,12 +231,12 @@ export default function EngagementsControls(props) {
                 container
                 direction="row"
                 // justify="space-evenly"
-                // alignItems="center"
+                alignItems="center"
                 spacing={1}
             >
-                <Grid item xs={6} md={2} >  <Search label="Search for Engagements"/> </Grid>
+                <Grid item xs={6} md={2} >  <Search label="Search Engagements"/> </Grid>
                 <Grid item xs={6} md={1}  > <Dropdown1 label="Staff" data={contact} /> </Grid>
-                <Grid item  xs={6} md={2} > <Dropdown1 label="Contact" data={staff} /> </Grid>
+                <Grid item  xs={6} md={1} > <Dropdown1 label="Contact" data={staff} /> </Grid>
                 <Grid item  xs={6} md={1} > <Dropdown1 label="Engagement" data={engagements} /> </Grid>
                 <Grid item  xs={6} md={2} >
                     <MuiPickersUtilsProvider libInstance={moment} utils={MomentUtils}>

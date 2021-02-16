@@ -43,16 +43,10 @@ import {
 } from '@material-ui/pickers';
 
 const name = [
-    'LEICESTER FOOTBALL CLUB 1',
-    'LEICESTER FOOTBALL CLUB 2',
-    'JUSTIN BOWLY 3 ',
-    'LEICESTER FOOTBALL CLUB 4',
-    'LEICESTER FOOTBALL  5',
-    'LEICESTER FOOTBALL CLUB6',
-    'LEICESTER FOOTBALL  7',
-    'LEICESTER FOOTBALL  8',
-    'LEICESTER FOOTBALL  9',
-    'LEICESTER FOOTBALL  10',
+    'LEICESTER CLUB 1',
+    'LEICESTER CLUB 2',
+    'LEICESTER CLUB 4',
+    'LEICESTER CLUB 6',
 ]
 
 const useStyles = makeStyles((theme) => ({

@@ -24,9 +24,13 @@ import MuiTab from './MuiOverrides/MuiTab';
 import MuiTextField from './MuiOverrides/MuiTextField';
 import MuiOutlinedInput from './MuiOverrides/MuiOutlinedInput';
 import MuiInput from './MuiOverrides/MuiInput';
+import MuiInputBase from './MuiOverrides/MuiInputBase';
 import MuiInputLabel from './MuiOverrides/MuiInputLabel';
+import MuiTable from './MuiOverrides/MuiTable';
 import MuiTableCell from './MuiOverrides/MuiTableCell';
+import MuiTableRow from './MuiOverrides/MuiTableRow';
 import MuiTableSortLabel from './MuiOverrides/MuiTableSortLabel';
+import MuiFormControl from './MuiOverrides/MuiFormControl';
 import MuiFormLabel from './MuiOverrides/MuiFormLabel';
 import MuiTooltip from './MuiOverrides/MuiTooltip';
 import MuiPopover from './MuiOverrides/MuiPopover';
@@ -52,14 +56,18 @@ const theme = createMuiTheme({
         MuiButton,
         MuiCssBaseline,
         MuiDialog,
+        MuiFormControl,
         MuiFormLabel,
         MuiInput,
+        MuiInputBase,
         MuiInputLabel,
         MuiOutlinedInput,
         MuiPopover,
         MuiSelect,
         MuiTab,
+        MuiTable,
         MuiTableCell,
+        MuiTableRow,
         MuiTableSortLabel,
         MuiTextField,
         MuiTooltip

@@ -103,14 +103,10 @@ function EngagementHistory(props) {
 
         });
     return (
-        <MuiThemeProvider theme={getMuiTheme()}>
-            {/* <Grid
-  container
-  direction="row"
-  justify="flex-start"
-  alignItems="flex-start" */}
+      
+       
             <Box margin={1}  >
-                <Typography variant="h6" gutterBottom component="div" style={{paddingLeft:"35px"}}>
+                <Typography variant="h6" gutterBottom component="div">
                     ENGAGEMENT HISTORY
             </Typography>
                 <Table size="small" aria-label="purchases"   >
@@ -155,9 +151,8 @@ function EngagementHistory(props) {
                     </TableBody>
                 </Table>
             </Box>
-            {/* </Grid> */}
 
-        </MuiThemeProvider>
+     
 
     )
 }

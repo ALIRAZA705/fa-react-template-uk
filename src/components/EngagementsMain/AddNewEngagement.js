@@ -8,7 +8,7 @@ import { makeStyles, fade, useTheme } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 
 import Avatar from '@material-ui/core/Avatar';
-
+import lc_clubimage from '../../assets/lc.png';
 import MomentUtils from "@date-io/moment";
 import moment from "moment";
 import ScheduleIcon from '@material-ui/icons/Schedule';
@@ -229,7 +229,7 @@ export default function AddNewEngagement() {
     }, []);
     return (
         <div>
-            <MuiThemeProvider theme={getMuiTheme()}>
+            
                 <div style={{ margin: "10px" }}>
 
 
@@ -263,7 +263,7 @@ export default function AddNewEngagement() {
                            
                                <h1 style={{ color: "white",marginRight:"15px"}}>&middot;</h1>
                                 <Grid item  >
-                                <Avatar alt="Remy Sharp" src="lc.png" className={classes.large} />
+                                <Avatar alt="Remy Sharp" src={lc_clubimage} className={classes.large} />
                                 </Grid>
                                
                                 <Grid item  >
@@ -349,7 +349,6 @@ export default function AddNewEngagement() {
 
                 </Grid>
 
-            </MuiThemeProvider>
         </div>
     )
 }

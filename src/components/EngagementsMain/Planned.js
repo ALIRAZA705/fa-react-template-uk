@@ -207,7 +207,7 @@ function Rowdata(props) {
     const classes = useStyles();
     return (
         <React.Fragment >
-            <TableRow style={{height:"70px",paddingBottom:"50px"}} 
+            <TableRow style={{height:"70px",paddingBottom:"50px", backgroundColor: "#041F42"}} 
              onClick={() => {
                     setOpen(!open)
                 }}  >
@@ -233,9 +233,6 @@ export default function PlannedEngagements() {
     const header = ["CONTACT NAME", "ROLE", "CLUB", "LEAGUE"]
     return (
         <div>
-            {/* <Header /> */}
-            {/* <AddContact/> */}
-            <MuiThemeProvider theme={getMuiTheme()}>
                 <TableContainer component={Paper} >
                     <Table aria-label="collapsible table" style={{
                         backgroundImage: `url(${backgroundImage})`
@@ -259,8 +256,6 @@ export default function PlannedEngagements() {
                         </TableBody>
                     </Table>
                 </TableContainer>
-            </MuiThemeProvider>
-            {/* <TableDetails club={club} header={header}/> */}
         </div>
     );
 }

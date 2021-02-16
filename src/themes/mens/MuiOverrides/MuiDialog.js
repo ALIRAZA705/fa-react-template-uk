@@ -6,8 +6,19 @@ const MuiDialog = {
     ...defaultMuiDialog,
     scrollPaper: {
         ...defaultMuiDialog.scrollPaper,
-        backgroundImage: `url(${PlayerBackgroundImage})`,
-    }
+    },
+    paper:{
+        backgroundColor:"#09213e",
+        // maxWidth:"50%",
+        overflowX:"hidden",
+        overflowY:"hidden"
+    },
+    paperWidthLg:{
+        maxWidth:"1280px"
+    },
+    paperScrollPaper:{
+        flexDirection:"column"
+    },
 }
 
 export default MuiDialog;

@@ -14,7 +14,7 @@ import Qualifications from './Qualifications'
 import EngagementHistory from './EngagementHistory'
 // import backgroundImage from '../../Assets/main.png'
 import { makeStyles } from '@material-ui/core/styles';
-import getMuiTheme from '../../styles/Overridestyles'
+// import getMuiTheme from '../../styles/Overridestyles'
 import { useSelector, useDispatch } from 'react-redux'
 import Collapse from '@material-ui/core/Collapse';
 import ClubInfo from './Clubinfo';
@@ -233,7 +233,7 @@ export default function Clubs() {
         <div>
             {/* <Header /> */}
             {/* <AddContact/> */}
-            <MuiThemeProvider theme={getMuiTheme()}>
+            {/* <MuiThemeProvider theme={getMuiTheme()}> */}
                 <TableContainer component={Paper} >
                     <Table aria-label="collapsible table" 
                     // style={{
@@ -258,7 +258,7 @@ export default function Clubs() {
                         </TableBody>
                     </Table>
                 </TableContainer>
-            </MuiThemeProvider>
+            {/* </MuiThemeProvider> */}
             {/* <TableDetails club={club} header={header}/> */}
         </div>
     );

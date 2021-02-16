@@ -41,6 +41,28 @@ function EngagementHistory(props) {
     const getMuiTheme = () =>
         createMuiTheme({
             overrides: {
+                // typography: {
+                //     fontFamily: [
+                //         'Grot12Condensed',
+                //     ],
+                //     button: {
+                //         fontWeight: 400,
+                //         textAlign: 'capitalize'
+                //     },
+                //     fontSize: 16,
+                //     h1: {
+                //         fontFamily: 'EnglandFCDISPLAY'
+                //     },
+                //     h2: {
+                //         fontFamily: 'EnglandFCDISPLAY'
+                //     },
+                //     h3: {
+                //         fontFamily: 'EnglandFCDISPLAY'
+                //     },
+                //     h4: {
+                //         fontFamily: 'EnglandFCDISPLAY'
+                //     }
+                // },
                 MuiTable: {
                     root:
                     {
@@ -63,8 +85,8 @@ function EngagementHistory(props) {
                 },
                 MuiTableCell: {
                     root: {
-                      paddingLeft:"35px ! important",
-                      borderBottom:"1px solid #314151 ",
+                        paddingLeft: "35px ! important",
+                        borderBottom: "1px solid #314151 ",
                         // paddingTop: 4,
                         // paddingBottom: 4,
                         // "&:last-child": {
@@ -96,28 +118,20 @@ function EngagementHistory(props) {
                 MuiTableRow: {
                     root: {
                         verticalAlign: "baseline",
-                          backgroundColor:"#314154"
+                        backgroundColor: "#314154"
                     },
                 },
             }
 
         });
     return (
-        <MuiThemeProvider theme={getMuiTheme()}>
-            {/* <Grid
-  container
-  direction="row"
-  justify="flex-start"
-  alignItems="flex-start" */}
             <Box margin={1}  >
-                <Typography variant="h6" gutterBottom component="div" style={{paddingLeft:"35px"}}>
+                <Typography variant="h6" gutterBottom component="div" style={{ paddingLeft: "35px" }}>
                     ENGAGEMENT HISTORY
             </Typography>
                 <Table size="small" aria-label="purchases"   >
                     <TableHead   >
                         <TableRow  >
-
-                            {/* {renderTableH  eading(props.heading)} */}
 
 
                             <TableCell >Date</TableCell>
@@ -126,8 +140,6 @@ function EngagementHistory(props) {
                         </TableRow>
                     </TableHead>
                     <TableBody  >
-                        {/* {renderTableBody(row.engagementHistory)} */}
-
                         {row.engagementHistory.map((historyRow) => (
                             <TableRow key={historyRow.date}  >
 
@@ -142,9 +154,6 @@ function EngagementHistory(props) {
                     </TableBody>
                 </Table>
             </Box>
-            {/* </Grid> */}
-
-        </MuiThemeProvider>
 
     )
 }

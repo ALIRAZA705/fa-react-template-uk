@@ -1,22 +1,16 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Carousel from "react-elastic-carousel";
-import Item from "./Item";
-// import "../../App.css";
 import { makeStyles, fade, useTheme } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 import { FormControl, FormLabel } from '@material-ui/core';
-import PhoneIcon from '@material-ui/icons/Phone';
 import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/styles';
-import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import lc_clubimage from '../../assets/lc.png';
+
 import Switch from '@material-ui/core/Switch';
 import EngagamentsMain from "../EngagementsMain"
 const breakPoints = [
@@ -29,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         minWidth: 275,
         marginTop: 20,
-        //   marginLeft:"0px"
     },
     bullet: {
         display: 'inline-block',
@@ -114,490 +107,421 @@ function Dashboard() {
         checked: {},
     }))(Switch);
     return (
-        <MuiThemeProvider theme={getMuiTheme()}>
 
-            <>
-                {/* <div className="Horizontal_Scroll_view "> */}
-                <Carousel breakPoints={breakPoints}>
-                    <Card className={classes.root}>
+        <>
+            <Carousel breakPoints={breakPoints}>
+                <Card className={classes.root}>
 
-                        <Grid
-                            container
-                            direction="row"
-                            justify="flex-start"
-                            alignItems="center"
-                            spacing={10}
-                        >
-                            <Grid item>
-                                <Typography variant="h5" component="h5" style={{ paddingLeft: "12px", marginTop: "10px" }} color="white" gutterBottom>
-                                    Justin Bowley
-        </Typography>
-                            </Grid>
-                            <Grid item>
-                                <Fab size="small" aria-label={fabs.label} color={fabs.color} >
-                                    {fabs.icon}
-                                </Fab>
-                            </Grid>
-                        </Grid>
-
-                        <Grid
-                            container
-                            direction="row"
-                            justify="flex-start"
-                            alignItems="flex-start"
-                        >
-
-
-                            <Grid item  >
-                                <Avatar alt="Remy Sharp" src="lc.png" className={classes.large} style={{ paddingLeft: "10px" }} />
-                            </Grid>
-
-                            <Grid item  >
-                                <FormLabel style={{ color: "white", margin: "20px", marginLeft: "0px" }}>Leicester City Football Club</FormLabel>
-                            </Grid>
-                        </Grid>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="space-between"
-                            alignItems="flex-start"
-                            spacing={3}
-                        >
-                            <h5 style={{ marginLeft: "27px" }}>Roles :</h5>
-                            <h5 style={{ marginLeft: "7px", marginRight: "17px" }}>GoalKeeping Coach </h5>
-                            <h5 style={{ marginRight: "27px" }}>GoalKeeping Coach </h5>
-                        </Grid>
-                        <hr />
-                        <Grid
-                            container
-                            direction="row"
-                            justify="center"
-                            alignItems="center"
-                            spacing={3}
-                        >
-                            <Grid item>
-                                <h5 style={{ marginTop: "0px" }}>@  Justin_bowley.com</h5>
-                            </Grid>
-                            {/* <Grid item> */}
-                            {/* <PhoneIcon style={{ marginLeft: "20px", marginTop: "0px" }} /> */}
-                            {/* </Grid> */}
-                            <Grid item>
-                                <h5 style={{ marginTop: "0px" }}> +4407480769082</h5>
-                            </Grid>
-                        </Grid>
-
-                    </Card>
-                    <Card className={classes.root}>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="flex-start"
-                            alignItems="center"
-                            spacing={10}
-                        >
-                            <Grid item>
-                                <Typography variant="h5" component="h5" style={{ paddingLeft: "12px", marginTop: "10px" }} color="white" gutterBottom>
-                                    Justin Bowley
-        </Typography>
-                            </Grid>
-                            <Grid item>
-                                <Fab size="small" aria-label={fabs.label} color={fabs.color} >
-                                    {fabs.icon}
-                                </Fab>
-                            </Grid>
-                        </Grid>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="flex-start"
-                            alignItems="flex-start"
-                        >
-
-
-                            <Grid item  >
-                                <Avatar alt="Remy Sharp" src="lc.png" className={classes.large} style={{ paddingLeft: "10px" }} />
-                            </Grid>
-
-                            <Grid item  >
-                                <FormLabel style={{ color: "white", margin: "20px", marginLeft: "0px" }}>Leicester City Football Club</FormLabel>
-                            </Grid>
-                        </Grid>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="space-between"
-                            alignItems="flex-start"
-                            spacing={3}
-                        >
-                            <h5 style={{ marginLeft: "27px" }}>Roles :</h5>
-                            <h5 style={{ marginLeft: "7px", marginRight: "17px" }}>GoalKeeping Coach </h5>
-                            <h5 style={{ marginRight: "27px" }}>GoalKeeping Coach </h5>
-                        </Grid>
-                        <hr />
-                        <Grid
-                            container
-                            direction="row"
-                            justify="center"
-                            alignItems="center"
-                            spacing={7}
-                        >
-                            <Grid item>
-                                <h5 style={{ marginTop: "0px" }}>@  Justin_bowley.com</h5>
-                            </Grid>
-                            <Grid item>
-                                <h5 style={{ marginTop: "0px" }}> +4407480769082</h5>
-                            </Grid>
-                        </Grid>
-                    </Card>
-                    <Card className={classes.root}>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="flex-start"
-                            alignItems="center"
-                            spacing={10}
-                        >
-                            <Grid item>
-                                <Typography variant="h5" component="h5" style={{ paddingLeft: "12px", marginTop: "10px" }} color="white" gutterBottom>
-                                    Justin Bowley
-        </Typography>
-                            </Grid>
-                            <Grid item>
-                                <Fab size="small" aria-label={fabs.label} color={fabs.color} >
-                                    {fabs.icon}
-                                </Fab>
-                            </Grid>
-                        </Grid>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="flex-start"
-                            alignItems="flex-start"
-                        >
-
-
-                            <Grid item  >
-                                <Avatar alt="Remy Sharp" src="lc.png" className={classes.large} style={{ paddingLeft: "10px" }} />
-                            </Grid>
-
-                            <Grid item  >
-                                <FormLabel style={{ color: "white", margin: "20px", marginLeft: "0px" }}>Leicester City Football Club</FormLabel>
-                            </Grid>
-                        </Grid>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="space-between"
-                            alignItems="flex-start"
-                            spacing={3}
-                        >
-                            <h5 style={{ marginLeft: "27px" }}>Roles :</h5>
-                            <h5 style={{ marginLeft: "7px", marginRight: "17px" }}>GoalKeeping Coach </h5>
-                            <h5 style={{ marginRight: "27px" }}>GoalKeeping Coach </h5>
-                        </Grid>
-                        <hr />
-                        <Grid
-                            container
-                            direction="row"
-                            justify="center"
-                            alignItems="center"
-                            spacing={7}
-                        >
-                            <Grid item>
-                                <h5 style={{ marginTop: "0px" }}>@  Justin_bowley.com</h5>
-                            </Grid>
-                            <Grid item>
-                                <h5 style={{ marginTop: "0px" }}> +4407480769082</h5>
-                            </Grid>
-                        </Grid>
-                    </Card>
-                    <Card className={classes.root}>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="flex-start"
-                            alignItems="center"
-                            spacing={10}
-                        >
-                            <Grid item>
-                                <Typography variant="h5" component="h5" style={{ paddingLeft: "12px", marginTop: "10px" }} color="white" gutterBottom>
-                                    Justin Bowley
-        </Typography>
-                            </Grid>
-                            <Grid item>
-                                <Fab size="small" aria-label={fabs.label} color={fabs.color} >
-                                    {fabs.icon}
-                                </Fab>
-                            </Grid>
-                        </Grid>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="flex-start"
-                            alignItems="flex-start"
-                        >
-
-
-                            <Grid item  >
-                                <Avatar alt="Remy Sharp" src="lc.png" className={classes.large} style={{ paddingLeft: "10px" }} />
-                            </Grid>
-
-                            <Grid item  >
-                                <FormLabel style={{ color: "white", margin: "20px", marginLeft: "0px" }}>Leicester City Football Club</FormLabel>
-                            </Grid>
-                        </Grid>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="space-between"
-                            alignItems="flex-start"
-                            spacing={3}
-                        >
-                            <h5 style={{ marginLeft: "27px" }}>Roles :</h5>
-                            <h5 style={{ marginLeft: "7px", marginRight: "17px" }}>GoalKeeping Coach </h5>
-                            <h5 style={{ marginRight: "27px" }}>GoalKeeping Coach </h5>
-                        </Grid>
-                        <hr />
-                        <Grid
-                            container
-                            direction="row"
-                            justify="center"
-                            alignItems="center"
-                            spacing={7}
-                        >
-                            <Grid item>
-                                <h5 style={{ marginTop: "0px" }}>@  Justin_bowley.com</h5>
-                            </Grid>
-                            <Grid item>
-                                <h5 style={{ marginTop: "0px" }}> +4407480769082</h5>
-                            </Grid>
-                        </Grid>
-                    </Card>
-                    <Card className={classes.root}>
                     <Grid
-                            container
-                            direction="row"
-                            justify="flex-start"
-                            alignItems="center"
-                            spacing={10}
-                        >
-                            <Grid item>
-                                <Typography variant="h5" component="h5" style={{ paddingLeft: "12px", marginTop: "10px" }} color="white" gutterBottom>
-                                    Justin Bowley
+                        container
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="center"
+                        spacing={10}
+                    >
+                        <Grid item>
+                            <Typography variant="h5" component="h5" style={{ paddingLeft: "12px", marginTop: "10px" }} color="white" gutterBottom>
+                                Justin Bowley
         </Typography>
-                            </Grid>
-                            <Grid item>
-                                <Fab size="small" aria-label={fabs.label} color={fabs.color} >
-                                    {fabs.icon}
-                                </Fab>
-                            </Grid>
                         </Grid>
-
-                      
-                      
-                      
-                        <Grid
-                            container
-                            direction="row"
-                            justify="flex-start"
-                            alignItems="flex-start"
-                        >
-
-
-                            <Grid item  >
-                                <Avatar alt="Remy Sharp" src="lc.png" className={classes.large} style={{ paddingLeft: "10px" }} />
-                            </Grid>
-
-                            <Grid item  >
-                                <FormLabel style={{ color: "white", margin: "20px", marginLeft: "0px" }}>Leicester City Football Club</FormLabel>
-                            </Grid>
+                        <Grid item>
+                            <Fab size="small" aria-label={fabs.label} color={fabs.color} >
+                                {fabs.icon}
+                            </Fab>
                         </Grid>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="space-between"
-                            alignItems="flex-start"
-                            spacing={3}
-                        >
-                            <h5 style={{ marginLeft: "27px" }}>Roles :</h5>
-                            <h5 style={{ marginLeft: "7px", marginRight: "17px" }}>GoalKeeping Coach </h5>
-                            <h5 style={{ marginRight: "27px" }}>GoalKeeping Coach </h5>
-                        </Grid>
-                        <hr />
-                        <Grid
-                            container
-                            direction="row"
-                            justify="center"
-                            alignItems="center"
-                            spacing={7}
-                        >
-                            <Grid item>
-                                <h5 style={{ marginTop: "0px" }}>@  Justin_bowley.com</h5>
-                            </Grid>
-                            <Grid item>
-                                <h5 style={{ marginTop: "0px" }}> +4407480769082</h5>
-                            </Grid>
-                        </Grid>
-                    </Card>
-                    <Card className={classes.root}>
+                    </Grid>
+
                     <Grid
-                            container
-                            direction="row"
-                            justify="flex-start"
-                            alignItems="center"
-                            spacing={10}
-                        >
-                            <Grid item>
-                                <Typography variant="h5" component="h5" style={{ paddingLeft: "12px", marginTop: "10px" }} color="white" gutterBottom>
-                                    Justin Bowley
+                        container
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="flex-start"
+                    >
+
+
+                        <Grid item  >
+                            <Avatar alt="Remy Sharp" src={lc_clubimage} className={classes.large} style={{ marginLeft: "5px" }} />
+                        </Grid>
+
+                        <Grid item  >
+                            <FormLabel style={{ color: "white", margin: "20px", marginLeft: "0px" }}>Leicester City Football Club</FormLabel>
+                        </Grid>
+                    </Grid>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="space-between"
+                        alignItems="flex-start"
+                        spacing={3}
+                    >
+                        <p style={{ marginLeft: "27px" }}>Roles :</p>
+                        <p style={{ marginLeft: "7px", marginRight: "17px" }}>GoalKeeping Coach </p>
+                        <p style={{ marginRight: "27px" }}>GoalKeeping Coach </p>
+                    </Grid>
+                    <hr />
+                    <Grid
+                        container
+                        direction="row"
+                        justify="center"
+                        alignItems="center"
+                        spacing={3}
+                    >
+                        <Grid item>
+                            <p style={{ marginTop: "0px" }}>@  Justin_bowley.com</p>
+                        </Grid>
+                        <Grid item>
+                            <p style={{ marginTop: "0px" }}> +4407480769082</p>
+                        </Grid>
+                    </Grid>
+
+                </Card>
+                <Card className={classes.root}>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="center"
+                        spacing={10}
+                    >
+                        <Grid item>
+                            <Typography variant="h5" component="h5" style={{ paddingLeft: "12px", marginTop: "10px" }} color="white" gutterBottom>
+                                Justin Bowley
         </Typography>
-                            </Grid>
-                            <Grid item>
-                                <Fab size="small" aria-label={fabs.label} color={fabs.color} >
-                                    {fabs.icon}
-                                </Fab>
-                            </Grid>
+                        </Grid>
+                        <Grid item>
+                            <Fab size="small" aria-label={fabs.label} color={fabs.color} >
+                                {fabs.icon}
+                            </Fab>
+                        </Grid>
+                    </Grid>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="flex-start"
+                    >
+
+
+                        <Grid item  >
+                            <Avatar alt="Remy Sharp" src={lc_clubimage} className={classes.large} style={{ marginLeft: "5px" }} />
                         </Grid>
 
-                        <Grid
-                            container
-                            direction="row"
-                            justify="flex-start"
-                            alignItems="flex-start"
-                        >
-
-
-                            <Grid item  >
-                                <Avatar alt="Remy Sharp" src="lc.png" className={classes.large} style={{ paddingLeft: "10px" }} />
-                            </Grid>
-
-                            <Grid item  >
-                                <FormLabel style={{ color: "white", margin: "20px", marginLeft: "0px" }}>Leicester City Football Club</FormLabel>
-                            </Grid>
+                        <Grid item  >
+                            <FormLabel style={{ color: "white", margin: "20px", marginLeft: "0px" }}>Leicester City Football Club</FormLabel>
                         </Grid>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="space-between"
-                            alignItems="flex-start"
-                            spacing={3}
-                        >
-                            <h5 style={{ marginLeft: "27px" }}>Roles :</h5>
-                            <h5 style={{ marginLeft: "7px", marginRight: "17px" }}>GoalKeeping Coach </h5>
-                            <h5 style={{ marginRight: "27px" }}>GoalKeeping Coach </h5>
+                    </Grid>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="space-between"
+                        alignItems="flex-start"
+                        spacing={3}
+                    >
+                        <p style={{ marginLeft: "27px" }}>Roles :</p>
+                        <p style={{ marginLeft: "7px", marginRight: "17px" }}>GoalKeeping Coach </p>
+                        <p style={{ marginRight: "27px" }}>GoalKeeping Coach </p>
+                    </Grid>
+                    <hr />
+                    <Grid
+                        container
+                        direction="row"
+                        justify="center"
+                        alignItems="center"
+                        spacing={7}
+                    >
+                        <Grid item>
+                            <p style={{ marginTop: "0px" }}>@  Justin_bowley.com</p>
                         </Grid>
-                        <hr />
-                        <Grid
-                            container
-                            direction="row"
-                            justify="center"
-                            alignItems="center"
-                            spacing={7}
-                        >
-                            <Grid item>
-                                <h5 style={{ marginTop: "0px" }}>@  Justin_bowley.com</h5>
-                            </Grid>
-                            <Grid item>
-                                <h5 style={{ marginTop: "0px" }}> +4407480769082</h5>
-                            </Grid>
+                        <Grid item>
+                            <p style={{ marginTop: "0px" }}> +4407480769082</p>
                         </Grid>
-                    </Card>
-                    <Card className={classes.root}>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="flex-start"
-                            alignItems="flex-start"
-                        >
-                         <Grid item>
-                                <Typography variant="h5" component="h5" style={{ paddingLeft: "12px", marginTop: "10px" }} color="white" gutterBottom>
-                                    Justin Bowley
+                    </Grid>
+                </Card>
+                <Card className={classes.root}>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="center"
+                        spacing={10}
+                    >
+                        <Grid item>
+                            <Typography variant="h5" component="h5" style={{ paddingLeft: "12px", marginTop: "10px" }} color="white" gutterBottom>
+                                Justin Bowley
         </Typography>
-                            </Grid>
-                            <Grid item>
-                                <Fab size="small" aria-label={fabs.label} color={fabs.color} >
-                                    {fabs.icon}
-                                </Fab>
-                            </Grid>
                         </Grid>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="flex-start"
-                            alignItems="flex-start"
-                        >
-
-
-                            <Grid item  >
-                                <Avatar alt="Remy Sharp" src="lc.png" className={classes.large} style={{ paddingLeft: "10px" }} />
-                            </Grid>
-
-                            <Grid item  >
-                                <FormLabel style={{ color: "white", margin: "20px", marginLeft: "0px" }}>Leicester City Football Club</FormLabel>
-                            </Grid>
+                        <Grid item>
+                            <Fab size="small" aria-label={fabs.label} color={fabs.color} >
+                                {fabs.icon}
+                            </Fab>
                         </Grid>
-                        <Grid
-                            container
-                            direction="row"
-                            justify="space-between"
-                            alignItems="flex-start"
-                            spacing={3}
-                        >
-                            <h5 style={{ marginLeft: "27px" }}>Roles :</h5>
-                            <h5 style={{ marginLeft: "7px", marginRight: "17px" }}>GoalKeeping Coach </h5>
-                            <h5 style={{ marginRight: "27px" }}>GoalKeeping Coach </h5>
-                        </Grid>
-                        <hr />
-                        <Grid
-                            container
-                            direction="row"
-                            justify="center"
-                            alignItems="center"
-                            spacing={7}
-                        >
-                            <Grid item>
-                                <h5 style={{ marginTop: "0px" }}>@  Justin_bowley.com</h5>
-                            </Grid>
-                            <Grid item>
-                                <h5 style={{ marginTop: "0px" }}> +4407480769082</h5>
-                            </Grid>
-                        </Grid>
-                    </Card>
+                    </Grid>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="flex-start"
+                    >
 
 
-                </Carousel>
-                {/* </div> */}
-                <Grid
-                    container
-                    direction="row"
-                    justify="center" alignItems="center"
-                >
-                    <Grid item >
-                        <Typography component="div" style={{ marginTop: "30px", marginRight: "20px", color: "white", marginBottom: "20px" }}>
-                            <Grid component="label" container alignItems="flex-end" spacing={1}>
-                                <Grid item>My Engagements</Grid>
-                                <Grid item>
-                                    <AntSwitch />
-                                </Grid>
-                                <Grid item>All Engagements </Grid>
-                            </Grid>
+                        <Grid item  >
+                            <Avatar alt="Remy Sharp" src={lc_clubimage} className={classes.large} style={{ marginLeft: "5px" }} />
+                        </Grid>
+
+                        <Grid item  >
+                            <FormLabel style={{ color: "white", margin: "20px", marginLeft: "0px" }}>Leicester City Football Club</FormLabel>
+                        </Grid>
+                    </Grid>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="space-between"
+                        alignItems="flex-start"
+                        spacing={3}
+                    >
+                        <p style={{ marginLeft: "27px" }}>Roles :</p>
+                        <p style={{ marginLeft: "7px", marginRight: "17px" }}>GoalKeeping Coach </p>
+                        <p style={{ marginRight: "27px" }}>GoalKeeping Coach </p>
+                    </Grid>
+                    <hr />
+                    <Grid
+                        container
+                        direction="row"
+                        justify="center"
+                        alignItems="center"
+                        spacing={7}
+                    >
+                        <Grid item>
+                            <p style={{ marginTop: "0px" }}>@  Justin_bowley.com</p>
+                        </Grid>
+                        <Grid item>
+                            <p style={{ marginTop: "0px" }}> +4407480769082</p>
+                        </Grid>
+                    </Grid>
+                </Card>
+                <Card className={classes.root}>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="center"
+                        spacing={10}
+                    >
+                        <Grid item>
+                            <Typography variant="h5" component="h5" style={{ paddingLeft: "12px", marginTop: "10px" }} color="white" gutterBottom>
+                                Justin Bowley
                         </Typography>
+                        </Grid>
+                        <Grid item>
+                            <Fab size="small" aria-label={fabs.label} color={fabs.color} >
+                                {fabs.icon}
+                            </Fab>
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid
-                    container
-                    direction="row"
-                    justify="flex-end" alignItems="flex-end"
-                >
-                    <Grid item md={8}>
-                        {/* <div style={{marginRight:"20px"}}> */}
-                        <EngagamentsMain />
-                        {/* </div> */}
-                    </Grid>
-                </Grid>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="flex-start"
+                    >
 
-            </>
-        </MuiThemeProvider>
+
+                        <Grid item  >
+                            <Avatar alt="Remy Sharp" src={lc_clubimage} className={classes.large} style={{ marginLeft: "5px" }} />
+                        </Grid>
+
+                        <Grid item  >
+                            <FormLabel style={{ color: "white", margin: "20px", marginLeft: "0px" }}>Leicester City Football Club</FormLabel>
+                        </Grid>
+                    </Grid>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="space-between"
+                        alignItems="flex-start"
+                        spacing={3}
+                    >
+                        <p style={{ marginLeft: "27px" }}>Roles :</p>
+                        <p style={{ marginLeft: "7px", marginRight: "17px" }}>GoalKeeping Coach </p>
+                        <p style={{ marginRight: "27px" }}>GoalKeeping Coach </p>
+                    </Grid>
+                    <hr />
+                    <Grid
+                        container
+                        direction="row"
+                        justify="center"
+                        alignItems="center"
+                        spacing={7}
+                    >
+                        <Grid item>
+                            <p style={{ marginTop: "0px" }}>@  Justin_bowley.com</p>
+                        </Grid>
+                        <Grid item>
+                            <p style={{ marginTop: "0px" }}> +4407480769082</p>
+                        </Grid>
+                    </Grid>
+                </Card>
+                <Card className={classes.root}>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="center"
+                        spacing={10}
+                    >
+                        <Grid item>
+                            <Typography variant="h5" component="h5" style={{ paddingLeft: "12px", marginTop: "10px" }} color="white" gutterBottom>
+                                Justin Bowley
+        </Typography>
+                        </Grid>
+                        <Grid item>
+                            <Fab size="small" aria-label={fabs.label} color={fabs.color} >
+                                {fabs.icon}
+                            </Fab>
+                        </Grid>
+                    </Grid>
+
+
+
+
+                    <Grid
+                        container
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="flex-start"
+                    >
+
+
+                        <Grid item  >
+                            <Avatar alt="Remy Sharp" src={lc_clubimage} className={classes.large} style={{ marginLeft: "5px" }} />
+                        </Grid>
+
+                        <Grid item  >
+                            <FormLabel style={{ color: "white", margin: "20px", marginLeft: "0px" }}>Leicester City Football Club</FormLabel>
+                        </Grid>
+                    </Grid>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="space-between"
+                        alignItems="flex-start"
+                        spacing={3}
+                    >
+                        <p style={{ marginLeft: "27px" }}>Roles :</p>
+                        <p style={{ marginLeft: "7px", marginRight: "17px" }}>GoalKeeping Coach </p>
+                        <p style={{ marginRight: "27px" }}>GoalKeeping Coach </p>
+                    </Grid>
+                    <hr />
+                    <Grid
+                        container
+                        direction="row"
+                        justify="center"
+                        alignItems="center"
+                        spacing={7}
+                    >
+                        <Grid item>
+                            <p style={{ marginTop: "0px" }}>@  Justin_bowley.com</p>
+                        </Grid>
+                        <Grid item>
+                            <p style={{ marginTop: "0px" }}> +4407480769082</p>
+                        </Grid>
+                    </Grid>
+                </Card>
+                <Card className={classes.root}>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="center"
+                        spacing={10}
+                    >
+                        <Grid item>
+                            <Typography variant="h5" component="h5" style={{ paddingLeft: "12px", marginTop: "10px" }} color="white" gutterBottom>
+                                Justin Bowley
+        </Typography>
+                        </Grid>
+                        <Grid item>
+                            <Fab size="small" aria-label={fabs.label} color={fabs.color} >
+                                {fabs.icon}
+                            </Fab>
+                        </Grid>
+                    </Grid>
+
+                    <Grid
+                        container
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="flex-start"
+                    >
+
+
+                        <Grid item  >
+                            <Avatar alt="Remy Sharp" src={lc_clubimage} className={classes.large} style={{ marginLeft: "5px" }} />
+                        </Grid>
+
+                        <Grid item  >
+                            <FormLabel style={{ color: "white", margin: "20px", marginLeft: "0px" }}>Leicester City Football Club</FormLabel>
+                        </Grid>
+                    </Grid>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="space-between"
+                        alignItems="flex-start"
+                        spacing={3}
+                    >
+                        <p style={{ marginLeft: "27px" }}>Roles :</p>
+                        <p style={{ marginLeft: "7px", marginRight: "17px" }}>GoalKeeping Coach </p>
+                        <p style={{ marginRight: "27px" }}>GoalKeeping Coach </p>
+                    </Grid>
+                    <hr />
+                    <Grid
+                        container
+                        direction="row"
+                        justify="center"
+                        alignItems="center"
+                        spacing={7}
+                    >
+                        <Grid item>
+                            <p style={{ marginTop: "0px" }}>@  Justin_bowley.com</p>
+                        </Grid>
+                        <Grid item>
+                            <p style={{ marginTop: "0px" }}> +4407480769082</p>
+                        </Grid>
+                    </Grid>
+                </Card>
+
+
+
+            </Carousel>
+            <Grid
+                container
+                direction="row"
+                justify="center" alignItems="center"
+            >
+                <Grid item >
+                    <Typography component="div" style={{ marginTop: "30px", marginRight: "20px", color: "white", marginBottom: "20px" }}>
+                        <Grid component="label" container alignItems="flex-end" spacing={1}>
+                            <Grid item>My Engagements</Grid>
+                            <Grid item>
+                                <AntSwitch />
+                            </Grid>
+                            <Grid item>All Engagements </Grid>
+                        </Grid>
+                    </Typography>
+                </Grid>
+            </Grid>
+            <Grid
+                container
+                direction="row"
+                justify="flex-end" alignItems="flex-end"
+            >
+                <Grid item md={8}>
+                    <EngagamentsMain />
+                </Grid>
+            </Grid>
+
+        </>
     );
 }
 

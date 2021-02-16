@@ -200,7 +200,7 @@ function Rowdata(props) {
         <React.Fragment >
                       {/* <TableRow  style={{backgroundColor:"#00152e"}}  > */}
 
-            <TableRow style={{height:"70px"}}
+            <TableRow style={{height:"70px",backgroundColor: "#041F42"}} 
              onClick={() => {
                     setOpen(!open)
                 }}  >
@@ -229,7 +229,7 @@ export default function EngagementComplete() {
     
             {/* <Header /> */}
             {/* <AddContact/> */}
-            <MuiThemeProvider theme={getMuiTheme()}>
+            
                 <TableContainer component={Paper} >
                     <Table aria-label="collapsible table" style={{
                         backgroundImage: `url(${backgroundImage})`
@@ -253,7 +253,7 @@ export default function EngagementComplete() {
                         </TableBody>
                     </Table>
                 </TableContainer>
-            </MuiThemeProvider>
+            
             {/* <TableDetails club={club} header={header}/> */}
         </div>
     );

@@ -73,36 +73,39 @@ const theme = createMuiTheme({
         MuiButton: {
             borderRadius: 2
         },
+        MuiTableCell: {
+            root: {
+              paddingLeft:"35px ! important",
+              borderBottom:"1px solid #314151 ",
+                // paddingTop: 4,
+                // paddingBottom: 4,
+                // "&:last-child": {
+                //   paddingRight: 5
+                // }
+            },
+            body: {
+                color: 'white',
+            },
+            head: {
+                color: 'white',
+                backgroundColor: "#00152e"
+            }
+        },
+        MuiTableRow: {
+            root: {
+              verticalAlign:"baseline"
+            },
+          },
         MuiTooltip: {
             tooltip: {
                 backgroundColor: '#004F9F',
                 fontSize: 16,
                 color: '#FFFFFF'
             }
-        }
+        },
+        
     },
-    typography: {
-        fontFamily: [
-            'Grot12Condensed',
-        ],
-        button: {
-            fontWeight: 400,
-            textAlign: 'capitalize'
-        },
-        fontSize: 16,
-        h1: {
-            fontFamily: 'EnglandFCDISPLAY'
-        },
-        h2: {
-            fontFamily: 'EnglandFCDISPLAY'
-        },
-        h3: {
-            fontFamily: 'EnglandFCDISPLAY'
-        },
-        h4: {
-            fontFamily: 'EnglandFCDISPLAY'
-        },
-    },
+    
 });
 
 export default theme;

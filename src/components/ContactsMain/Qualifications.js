@@ -84,7 +84,7 @@ function Qualifications(props) {
     // const classes = useStyles(); 
 
     return (
-        <MuiThemeProvider theme={getMuiTheme()}>
+        // <MuiThemeProvider theme={getMuiTheme()}>
             <Box margin={1}>
                 <Typography variant="h6" gutterBottom component="div">
                     Qualification
@@ -108,6 +108,7 @@ function Qualifications(props) {
                     </TableBody>
                 </Table>
             </Box>
-    </MuiThemeProvider>)
+    // </MuiThemeProvider>
+    )
 }
 export default Qualifications

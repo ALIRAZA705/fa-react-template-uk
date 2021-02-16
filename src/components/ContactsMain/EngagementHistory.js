@@ -41,13 +41,7 @@ function EngagementHistory(props) {
     const getMuiTheme = () =>
         createMuiTheme({
             overrides: {
-                MuiTable: {
-                    root:
-                    {
-                        borderSpacing: "0 3px ! important",
-                        borderCollapse: "separate ! important"
-                    }
-                },
+                
                 MUIDataTable: {
                     root: {
                         backgroundColor: "red",
@@ -60,24 +54,6 @@ function EngagementHistory(props) {
                     root: {
                         backgroundColor: '#f00',
                     },
-                },
-                MuiTableCell: {
-                    root: {
-                      paddingLeft:"35px ! important",
-                      borderBottom:"1px solid #314151 ",
-                        // paddingTop: 4,
-                        // paddingBottom: 4,
-                        // "&:last-child": {
-                        //   paddingRight: 5
-                        // }
-                    },
-                    body: {
-                        color: 'white',
-                    },
-                    head: {
-                        color: 'white',
-                        backgroundColor: "#00152e"
-                    }
                 },
                 MUIDataTableSelectCell: {
                     headerCell: {
@@ -93,22 +69,12 @@ function EngagementHistory(props) {
                     },
                 },
 
-                MuiTableRow: {
-                    root: {
-                        verticalAlign: "baseline",
-                          backgroundColor:"#314154"
-                    },
-                },
+              
             }
 
         });
     return (
-        <MuiThemeProvider theme={getMuiTheme()}>
-            {/* <Grid
-  container
-  direction="row"
-  justify="flex-start"
-  alignItems="flex-start" */}
+        <div>
             <Box margin={1}  >
                 <Typography variant="h6" gutterBottom component="div" style={{paddingLeft:"35px"}}>
                     ENGAGEMENT HISTORY
@@ -116,18 +82,12 @@ function EngagementHistory(props) {
                 <Table size="small" aria-label="purchases"   >
                     <TableHead   >
                         <TableRow  >
-
-                            {/* {renderTableH  eading(props.heading)} */}
-
-
                             <TableCell >Datet</TableCell>
                             <TableCell>Club</TableCell>
                             <TableCell align="left">Staff</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody  >
-                        {/* {renderTableBody(row.engagementHistory)} */}
-
                         {row.engagementHistory.map((historyRow) => (
                             <TableRow key={historyRow.date}  >
 
@@ -142,10 +102,8 @@ function EngagementHistory(props) {
                     </TableBody>
                 </Table>
             </Box>
-            {/* </Grid> */}
 
-        </MuiThemeProvider>
-
+            </div>
     )
 }
 export default EngagementHistory

@@ -117,7 +117,7 @@ export default function Header() {
   }
   return (
     <div >
-      <MuiThemeProvider theme={getMuiTheme()}>
+     
 
         {/* <Accordion
         TransitionProps={{ unmountOnExit: true }} 
@@ -192,7 +192,7 @@ export default function Header() {
          {/* {window.location=="http://localhost:3000/contacts"?  <EngagemenstControls row={state.clubs} />:<ContactControls row={state.clubs} />} */}
           {/* </AccordionDetails> */}
         {/* </Accordion> */}
-      </MuiThemeProvider>
+     
     </div>
   )
 }

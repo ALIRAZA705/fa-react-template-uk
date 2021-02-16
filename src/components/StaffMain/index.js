@@ -21,7 +21,7 @@ import { useContext } from 'react';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        border: "2px solid",
+        // border: "2px solid",
         borderColor: '#041f42',
         backgroundColor: '#041f42',
         width: '100%',
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     },
     // spacing between table rows and font color
     Rowspaicng: {
-        paddingBottom: 6,
+        paddingBottom: 1,
         paddingTop: 0,
         paddingRight: 0,
         paddingLeft: 0,
@@ -111,7 +111,7 @@ export default function Clubs() {
         <div>
             {/* <Header /> */}
             {/* <AddContact/> */}
-            <MuiThemeProvider theme={getMuiTheme()}>
+            
                 <TableContainer component={Paper} >
                     <Table aria-label="collapsible table" 
                     style={{
@@ -137,7 +137,7 @@ export default function Clubs() {
                         </TableBody>
                     </Table>
                 </TableContainer>
-            </MuiThemeProvider>
+          
             {/* <TableDetails club={club} header={header}/> */}
         </div>
     );

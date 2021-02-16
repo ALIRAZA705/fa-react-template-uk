@@ -139,12 +139,12 @@ const INIT_STATE = {
             ]
             , learningHistory: [
                 { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
             ]
         },
         {
@@ -154,12 +154,12 @@ const INIT_STATE = {
             ]
             , learningHistory: [
                 { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
             ]
         },
         {
@@ -169,12 +169,12 @@ const INIT_STATE = {
             ]
             , learningHistory: [
                 { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
             ]
         },
         {
@@ -184,12 +184,12 @@ const INIT_STATE = {
             ]
             , learningHistory: [
                 { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
-                // { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
+                { list: "Jason Tindall", completed_date: "10/10/2020" },
             ]
         },
         {

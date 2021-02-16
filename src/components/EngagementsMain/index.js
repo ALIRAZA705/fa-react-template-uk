@@ -146,8 +146,8 @@ export default function Engagements() {
 }
 
     return (
-        // <div>
-        <MuiThemeProvider theme={getMuiTheme()}>
+         <div>
+     
 
           {EngagementsFilterFlag==1?<PlannedEngagements/>:EngagementsFilterFlag==2?<EngagementComplete/>:EngagementsFilterFlag==3?<EnagagementsCancelled/>:<></>}
    
@@ -164,7 +164,7 @@ export default function Engagements() {
                     <DialogActions>
                     </DialogActions>
                 </Dialog>
-                </MuiThemeProvider>
-        // </div>
+         
+        </div>
     );
 }
