@@ -12,7 +12,8 @@ const INIT_STATE = {
     authInfoError: undefined,
     rules: undefined,
     attributes: undefined,
-    lastLogin: undefined
+    lastLogin: undefined,
+   
 };
 
 export default (state = INIT_STATE, action) => {
@@ -69,6 +70,7 @@ export default (state = INIT_STATE, action) => {
                 authInfoError: 'Error getting auth info'
             };
         }
+    
         default:
             return state;
     }

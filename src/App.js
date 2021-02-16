@@ -9,9 +9,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { FATabs } from './components/Tabs/FATabs';
 import Partners from './components/Partners/Partners';
-import Header from './components/Header';
 import HomeTab from './components/Tabs/HomeLayout';
 import AdminTab from './components/Tabs/AdminLayout';
+import Test from './components/Tabs/Test';
+import Contact from './components/ContactsMain';
+import Clubs from './components/ClubsMain';
+import EngagementsMain from './components/EngagementsMain'
+
 
 import FootballInsights from './routes/football-insights';
 import Reports from './routes/reports';
@@ -21,8 +25,15 @@ import MensTheme from './themes/mens';
 import WomensTheme from './themes/womens';
 
 import { getAuthInfo } from './store/actions/auth';
-
 import { authProvider } from './authProvider';
+import './FilterExpand.css'
+import Header from './Header'
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/styles';
+import ContactsFilters from './components/ContactsMain/ContactsFilter'
+const drawerWidth = 400;
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -130,6 +141,49 @@ const useStyles = makeStyles((theme) => ({
 
   }
 }));
+const getMuiTheme = () =>
+  createMuiTheme({
+    overrides: {
+      MuiAccordionSummary: {
+        content: {
+          margin: "0px 0px",
+          "&$expanded": {
+            margin: "0px 0px",
+          }
+        },
+
+        root: {
+          padding: "0px 0px",
+          backgroundColor: "#03162e",
+          minHeight: "0px",
+          "&$expanded": {
+            minHeight: "0px",
+          }
+        }
+      },
+      MuiAccordion: {
+        root: {
+          margin: "0px 0px",
+          "&$expanded": {
+            margin: "0px 0px",
+          }
+        },
+      },
+      MuiAccordionDetails: {
+        root: {
+          backgroundColor: "#03162e",
+          color: "white"
+        }
+      },
+      //dialog 
+      MuiDialogActions: {
+        root: {
+          padding: "0px",
+        },
+      },
+    }
+
+  });
 
 function a11yProps(index) {
   return {
@@ -140,12 +194,15 @@ function a11yProps(index) {
 
 function App(props) {
   const classes = useStyles();
-
   const store = useStore();
-
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
   const { state: authState } = auth;
+  const [expanded, setExpanded] = React.useState(false);
+  const handleChange = () => {
+    setExpanded(!expanded)
+  }
+
   React.useEffect(() => {
     console.log('auth state changed', authState);
     if (authState === AuthenticationState.Authenticated) {
@@ -153,24 +210,45 @@ function App(props) {
       dispatch(getAuthInfo());
     }
   }, [authState, dispatch]);
-
+ 
   return (
     <>
       <div className={classes.backgroundShirt}></div>
       <div className={classes.backgroundLines}></div>
+      <Header />
+      <MuiThemeProvider theme={getMuiTheme()}>
+      <Accordion
+            TransitionProps={{ unmountOnExit: true }}
+            expanded={expanded}
+          >
+            <AccordionSummary
+              aria-controls="panel1a-content"
+              id="panel1a-header"
 
-      <AzureAD provider={authProvider} reduxStore={store}>
+            >
+            </AccordionSummary>
+            <AccordionDetails>
+              {window.location == "http://localhost:3000/helix/contacts" ? <ContactsFilters /> :<></>}
+            </AccordionDetails>
+          </Accordion>
+          <hr className="new1" />
+          <button className="buttonx" onClick={handleChange}>
+            <hr className="new2"></hr></button>
+            </MuiThemeProvider>
+      {/* <AzureAD provider={authProvider} reduxStore={store}>
         {({ accountInfo, authenticationState, error, login, logout }) => {
           if (authenticationState === AuthenticationState.Unauthenticated || authenticationState === AuthenticationState.InProgress) {
-            // if (false) {
+          
             return (
-              // <Login />
+            
               <Box height="100vh" width={'100vw'} display="flex" flexDirection="column" justifyContent="center" alignItems="center">
                 <Typography className={classes.title} variant="h4" gutterBottom>HELIX</Typography>
                 <Button variant="contained" color="primary" onClick={login}>Login</Button>
               </Box>
             );
-          } else {
+          }
+          
+          else {
             return (
               <>
                 <Header accountInfo={accountInfo} logout={logout} />
@@ -182,14 +260,30 @@ function App(props) {
                     <Route path="/admin" component={AdminTab} />
                     <Route exact path="/report/:reportId" component={ReportSingle} />
                     <Route path="/" component={HomeTab} />
-
+                    <Route path="/test" component={Test} />
                   </Switch>
                 </Container>
               </>
             )
           }
         }}
-      </AzureAD>
+      </AzureAD> */}
+             {/* <Header  /> */}
+                <Container maxWidth={false} className={`${classes.addedHeight} ${classes.container}`}>
+                  {/* <TabNavigation /> */}
+                  <Switch>
+                    <Route path="/football-insights" component={FootballInsights} />
+                    <Route path="/reports" component={Reports} />
+                    <Route path="/admin" component={AdminTab} />
+                    <Route exact path="/report/:reportId" component={ReportSingle} />
+                    <Route path="/contacts" component={Contact} />
+                    <Route path="/clubs" component={Clubs} />
+                    <Route exact path="/engagements" component={EngagementsMain} />
+
+
+                    <Route path="/" component={HomeTab} />
+                  </Switch>
+                </Container>
     </>
   );
 }

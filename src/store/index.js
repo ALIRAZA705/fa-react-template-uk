@@ -11,7 +11,10 @@ export default function configureStore(initialState) {
     let middlewares = [sagaMiddleware]; // [routeMiddleware];
 
     const store = createStore(reducers, initialState, composeWithDevTools(applyMiddleware(...middlewares)));
-
+    // const store = compose(
+    //     applyMiddleware(sagaMiddleware),
+    //     window.devToolsExtension && window.devToolsExtension(),
+    //   )(createStore)(reducer);
     const logger = createLogger({})
 
     middlewares.push(logger);

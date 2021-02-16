@@ -1,0 +1,28 @@
+
+  hr.new1 {
+    border: 0;
+    border-top: 4px solid #1cb7ff;
+    margin: 0;
+  }
+
+  hr.new2{
+    width: 60px;
+    /* color: white; */
+    margin-top: 6px;
+    margin-bottom: 20px;
+    border: 4px solid #1699D4;
+    border-radius: 20px;
+  }
+
+  .buttonx {
+    width: 150px;
+    margin: 0;
+    background: #1cb7ff;
+    border: 0;
+    clip-path: polygon(0 0, 100% 0,  85% 45%, 15% 45%);
+    display: block;
+    margin-left: 46%;
+    position: relative;
+    top: -1px;
+    outline: none !important;
+  }
